@@ -7,6 +7,13 @@ MVP Requirements:
 - Rails 5.0.2
 
 # Install Travelgain (Linux)
+
+## Setting up the database
+1) Install MariaDB 10.1 (Database) [from here](https://downloads.mariadb.org/mariadb/repositories/)
+2) Create database using [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-create-and-manage-databases-in-mysql-and-mariadb-on-a-cloud-server)
+**Important:** Be sure to remember your user, password and database name
+
+## Setting up Ruby
 1) Change directory to your working directory
   ```
   $ cd [your path]
@@ -21,12 +28,17 @@ MVP Requirements:
   $ gem install bundler
   $ rbenv rehash
   ```
-5) Install Rails
+  
+## Setting up Rails
+1) Install Rails
   ```
   $ gem install rails -v 5.0.2
   $ rbenv rehash
   ```
-6) Update dependencies
+2) Update dependencies
   ```
   $ bundle install
   ```
+3) Copy `.rbenv-vars-sample` to `.rbenv-vars` and fill the document. Secrets can be generated using `rake secret`
+4) Edit in `database.yml` the fields `database` to match your database
+5) Run server with `bundle exec rails server`
