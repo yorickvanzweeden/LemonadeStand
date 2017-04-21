@@ -3,5 +3,5 @@ DATABASE_USER=
 DATABASE_PASSWORD=
 DATABASE_SOCKET=
 
-# Secrets
+# Rails secret key base
 RAILS_SECRET=
