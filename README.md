@@ -14,11 +14,11 @@ MVP Requirements:
 **Important:** Be sure to remember your user, password and database name
 
 ## Setting up Ruby
-1) Change directory to your working directory
+1) Install rbenv using [this tutorial](https://github.com/rbenv/rbenv#basic-github-checkout) with step 1 to 5
+2) Change directory to your working directory
   ```
   $ cd [your path]
   ```
-2) Install rbenv using [this tutorial](https://github.com/rbenv/rbenv#basic-github-checkout) with step 1 to 5
 3) Install Ruby
   ```
   $ rbenv install 2.4.1
