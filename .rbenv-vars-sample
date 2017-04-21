@@ -1,7 +1,6 @@
 # Database credentials
 DATABASE_USER=
 DATABASE_PASSWORD=
-DATABASE_SOCKET=
 
 # Rails secret key base
 RAILS_SECRET=
