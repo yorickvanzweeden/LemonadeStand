@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :subscriptions
+  resources :providers
+  resources :products
   root to: 'home#index'
 
   # Error pages

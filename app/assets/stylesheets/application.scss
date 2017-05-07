@@ -13,4 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap"
+@import "materialize/components/color";
+@import "materialize/extras/nouislider";
+@import 'materialize';
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";

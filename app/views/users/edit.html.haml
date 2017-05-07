@@ -1,0 +1,6 @@
+.container
+  %h1 Editing User
+  = render 'form', user: @user
+  %p
+  = link_to 'Show', @user, class: "waves-effect waves-light btn"
+  = link_to 'Back', users_path, class: "waves-effect waves-light btn"
