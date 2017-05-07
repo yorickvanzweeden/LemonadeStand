@@ -6,7 +6,7 @@
           %span.card-title
             = @subscription.name
           %p
-            I'm a subscription! My product is #{@subscription.product.name}. My provider is #{@subscription.provider.name}.
+            I'm a subscription! My product is #{@subscription.product.name}.
         .card-action
           %a= link_to 'Edit', edit_subscription_path(@subscription)
           %a= link_to 'Back', subscriptions_path
