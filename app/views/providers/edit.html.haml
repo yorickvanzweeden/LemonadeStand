@@ -1,0 +1,6 @@
+.container
+  %h1 Editing Provider
+  = render 'form', provider: @provider
+  %p
+  = link_to 'Show', @provider, class: "waves-effect waves-light btn"
+  = link_to 'Back', providers_path, class: "waves-effect waves-light btn"

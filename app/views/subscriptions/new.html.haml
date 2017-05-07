@@ -1,0 +1,5 @@
+.container
+  %h1 New Subscription
+  = render 'form', subscription: @subscription
+  %p
+  = link_to 'Back', subscriptions_path, class: "waves-effect waves-light btn"
