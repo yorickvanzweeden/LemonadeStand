@@ -9,9 +9,29 @@ MVP Requirements:
 # Install LemonadeStand (Linux)
 
 ## Setting up the database
-1) Install MariaDB 10.1 (Database) [from here](https://downloads.mariadb.org/mariadb/repositories/)
-2) Create database using [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-create-and-manage-databases-in-mysql-and-mariadb-on-a-cloud-server)
-**Important:** Be sure to remember your user, password and database name
+(Based on [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04))
+1) Let's get PostgreSQL
+  ```
+  $ sudo apt-get update
+  $ sudo apt-get install postgresql postgresql-contrib libpq-dev
+  ```
+2) Create a PostgreSQL user
+  ```
+  $ sudo -u postgres createuser -s [username]
+  ```
+  Enter PostgreSQL console
+  ```
+  $ sudo -u postgres psql
+  ```
+  Set password
+  ```
+  $ postgres=# \password [username]
+  ```
+  Exit PostgreSQL console
+  ```
+  $ postgres=# \q
+  ```
+**Important:** Be sure to remember your user and password
 
 ## Setting up Ruby
 1) Install rbenv using [this tutorial](https://github.com/rbenv/rbenv#basic-github-checkout) with step 1 to 5
@@ -48,5 +68,5 @@ MVP Requirements:
   $ cp .rbenv-vars-sample .rbenv-vars
   $ nano .rbenv-vars
   ```
-4) Edit in `database.yml` the fields `database` to match your database
+4) (Not always necessary) Edit in `database.yml` the fields `database` to match your database
 5) Run server with `bundle exec rails server`
