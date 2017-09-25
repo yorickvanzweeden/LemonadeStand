@@ -1,6 +1,6 @@
-class DeviseCreateProviders < ActiveRecord::Migration[5.0]
+class DeviseCreateCooks < ActiveRecord::Migration[5.0]
   def change
-    create_table :providers do |t|
+    create_table :cooks do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -34,9 +34,9 @@ class DeviseCreateProviders < ActiveRecord::Migration[5.0]
       t.timestamps null: false
     end
 
-    add_index :providers, :email,                unique: true
-    add_index :providers, :reset_password_token, unique: true
-    # add_index :providers, :confirmation_token,   unique: true
-    # add_index :providers, :unlock_token,         unique: true
+    add_index :cooks, :email,                unique: true
+    add_index :cooks, :reset_password_token, unique: true
+    # add_index :cooks, :confirmation_token,   unique: true
+    # add_index :cooks, :unlock_token,         unique: true
   end
 end

@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170507200327) do
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
   end
 
-  create_table "providers", force: :cascade do |t|
+  create_table "cooks", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(version: 20170507200327) do
     t.datetime "locked_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_providers_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_providers_on_reset_password_token", unique: true, using: :btree
+    t.index ["email"], name: "index_cooks_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_cooks_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "subscriptions", force: :cascade do |t|

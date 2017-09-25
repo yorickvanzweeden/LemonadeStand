@@ -1,4 +1,4 @@
-class Provider < ApplicationRecord
+class Cook < ApplicationRecord
   # Include default devise modules. Others available are:
   # :omniauthable
   devise :confirmable, :database_authenticatable, :lockable,

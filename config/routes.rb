@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
-  devise_for :providers
+  devise_for :cooks
   devise_for :users
   resources :subscriptions
   resources :products
