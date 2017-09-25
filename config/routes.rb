@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users
+  devise_for :admins
+  devise_for :providers
+  devise_for :users
   resources :subscriptions
-  resources :providers
   resources :products
   root to: 'home#index'
 

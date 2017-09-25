@@ -8,16 +8,21 @@
         %a{:href => "/products"} Products
       %li
         %a{:href => "/subscriptions"} Subscriptions
-      %li
-        %a{:href => "/providers"} Providers
-      %li
-        %a{:href => "/users"} Users
     %ul#mobile-demo.side-nav
+
+      - if user_signed_in?
+        %li
+          %a
+            = current_user.email
+          = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+          = link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'
+      - else
+        %li
+          = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+          = link_to "Login", new_user_session_path, :class => 'navbar-link'
+      %li
+        %div.divider
       %li
         %a{:href => "/products"} Products
       %li
         %a{:href => "/subscriptions"} Subscriptions
-      %li
-        %a{:href => "/providers"} Providers
-      %li
-        %a{:href => "/users"} Users

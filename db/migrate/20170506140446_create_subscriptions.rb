@@ -3,7 +3,6 @@ class CreateSubscriptions < ActiveRecord::Migration[5.0]
     create_table :subscriptions do |t|
       t.string :name
       t.references :product, foreign_key: true
-      t.references :provider, foreign_key: true
 
       t.timestamps
     end

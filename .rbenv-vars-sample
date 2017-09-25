@@ -4,3 +4,9 @@ DATABASE_PASSWORD=
 
 # Rails secret key base
 RAILS_SECRET=
+
+# Devise secret for hashing passwords
+DEVISE_SECRET=
+
+# Pepper for salted hashing
+DEVISE_PEPPER_SECRET=
