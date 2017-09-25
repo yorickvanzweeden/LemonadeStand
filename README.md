@@ -69,4 +69,9 @@ MVP Requirements:
   $ nano .rbenv-vars
   ```
 4) (Not always necessary) Edit in `database.yml` the fields `database` to match your database
-5) Run server with `bundle exec rails server`
+5) Create database and apply migrations
+  ```
+  $ rake db:create
+  $ rake db:migrate
+  ```
+6) Run server with `bundle exec rails server`
