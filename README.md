@@ -9,8 +9,8 @@ MVP Requirements:
 # Install Travelgain (Linux)
 
 ## Setting up the database
-1) Install MariaDB 10.1 (Database) [from here](https://downloads.mariadb.org/mariadb/repositories/)
-2) Create database using [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-create-and-manage-databases-in-mysql-and-mariadb-on-a-cloud-server)
+1) Install PostgreSQL (Database) and create user [from here](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04)
+2) 
 **Important:** Be sure to remember your user, password and database name
 
 ## Setting up Ruby
