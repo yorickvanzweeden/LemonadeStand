@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :products
   resources :order_items
+  resource :cart, only: [:show]
   root to: 'home#index'
 
   # Error pages
