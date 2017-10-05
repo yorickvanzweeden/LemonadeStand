@@ -4,14 +4,11 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     @products = Product.all
-    cu = current_order
-    puts cu.present?
-    puts cu.order_items.new
-    @order_item = current_order.order_items.new
   end
 
   # GET /products/1
   def show
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/new
