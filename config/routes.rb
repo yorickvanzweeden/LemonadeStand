@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :subscriptions
   resources :products
+  resources :order_items
   root to: 'home#index'
 
   # Error pages
