@@ -18,14 +18,17 @@ cook = User.create( email: "cook@cook.nl", role: "cook", password: 'cook@cook.nl
 cook.skip_confirmation!
 cook.save!
 
+cook2 = User.create( email: "cook2@cook.nl", role: "cook", password: 'cook2@cook.nl', password_confirmation: 'cook2@cook.nl')
+cook2.skip_confirmation!
+cook2.save!
 
 Category.create(name: "Category1", description: "Description1")
 Category.create(name: "Category2", description: "Description2")
 Category.create(name: "Category3", description: "Description3")
 
-Product.create(name: "Product1", category_id: 1, price: 1)
-Product.create(name: "Product2", category_id: 1, price: 2)
-Product.create(name: "Product3", category_id: 2, price: 3)
-Product.create(name: "Product4", category_id: 2, price: 4)
-Product.create(name: "Product5", category_id: 3, price: 5)
-Product.create(name: "Product6", category_id: 3, price: 6)
+Product.create(name: "Product1", category_id: 1, price: 1, cook_id: 3)
+Product.create(name: "Product2", category_id: 1, price: 2, cook_id: 3)
+Product.create(name: "Product3", category_id: 2, price: 3, cook_id: 3)
+Product.create(name: "Product4", category_id: 2, price: 4, cook_id: 4)
+Product.create(name: "Product5", category_id: 3, price: 5, cook_id: 4)
+Product.create(name: "Product6", category_id: 3, price: 6, cook_id: 4)

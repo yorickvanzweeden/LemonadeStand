@@ -41,20 +41,12 @@ ActiveRecord::Schema.define(version: 20171010135204) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
+    t.integer  "price"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "price"
     t.integer  "cook_id"
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_subscriptions_on_product_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,5 +78,4 @@ ActiveRecord::Schema.define(version: 20171010135204) do
   add_foreign_key "order_items", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users", column: "cook_id"
-  add_foreign_key "subscriptions", "products"
 end
