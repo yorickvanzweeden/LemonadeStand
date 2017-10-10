@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :subscriptions
   resources :products
   resources :order_items
   resource :cart, only: [:show]
