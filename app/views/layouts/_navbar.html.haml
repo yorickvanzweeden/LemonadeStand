@@ -8,8 +8,6 @@
         %a{:href => "/products"} Products
       - if user_signed_in?
         %li
-          = link_to 'Dashboard', dashboard_path, :class => 'navbar-link'
-        %li
           %a
             = current_user.email
         %li
