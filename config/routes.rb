@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :products
   resources :order_items
   resource :cart, only: [:show]
+  resource :dashboard, only: [:show]
   root to: 'home#index'
 
   # Error pages
