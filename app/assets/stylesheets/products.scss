@@ -1,0 +1,14 @@
+// Move cart button to right centre
+form#new_order_item {
+  display: inline;
+
+  i {
+    float: right;
+    top: -8px;
+  }
+}
+
+//Move price to the right
+.card .price {
+  float: right;
+}

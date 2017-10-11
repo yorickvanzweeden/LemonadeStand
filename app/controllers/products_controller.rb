@@ -14,10 +14,12 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    authorize @product
   end
 
   # GET /products/1/edit
   def edit
+    authorize @product
   end
 
   # POST /products
@@ -33,6 +35,8 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1
   def update
+    authorize @product
+
     if @product.update(product_params)
       redirect_to @product, notice: 'Product was successfully updated.'
     else
@@ -54,6 +58,6 @@ class ProductsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:name, :category_id, :price).merge(cook_id: current_user.id)
+      params.require(:product).permit(:name, :category_id, :price, :short_description, :description).merge(cook_id: current_user.id)
     end
 end
