@@ -9,12 +9,18 @@
           %li= message
   .field
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, required: true, placeholder: "Name of the product"
   .field
     = f.label :category_id
-    = f.text_field :category_id
+    = f.collection_select(:category_id, Category.all, :id, :name, required: true, include_blank: "Please select a category")
   .field
     = f.label :price
-    = f.number_field :price
+    = f.number_field :price, required: true, placeholder: 0
+  .field
+    = f.label :short_description
+    = f.text_field :short_description, required: true, placeholder: "This is a short line telling my customer what the product is about!"
+  .field
+    = f.label :description
+    = f.text_area :description, class: "materialize-textarea", required: true, placeholder: "Larger text telling the customer what this product is about!"
   .actions
     = f.submit

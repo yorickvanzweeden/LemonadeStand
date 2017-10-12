@@ -11,9 +11,9 @@
             I'm a product! My category is
             = product.category.name
         .card-action
-          %a= link_to 'Show', product
-          %a= link_to 'Edit', edit_product_path(product)
-          %a= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Show', product
+          = link_to 'Edit', edit_product_path(product)
+          = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 
 = link_to 'New product', new_product_path, class: "waves-effect waves-light btn"
