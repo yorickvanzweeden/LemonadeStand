@@ -11,14 +11,22 @@ class ProductPolicy
   end
 
   def edit?
-    user and ((user.cook? and product.owner_of?(user)) or user.admin?)
+    self.admin_or_cook_owner?
   end
 
   def update?
-    user and ((user.cook? and product.owner_of?(user)) or user.admin?)
+    self.admin_or_cook_owner?
   end
 
   def destroy?
+    self.admin_or_cook_owner?
+  end
+
+  def buy?
+    not self.admin_or_cook_owner?
+  end
+
+  def admin_or_cook_owner?
     user and ((user.cook? and product.owner_of?(user)) or user.admin?)
   end
 end
