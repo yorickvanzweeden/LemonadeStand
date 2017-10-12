@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   # Error pages
   match "/404", :to => "errors#not_found", :via => :all
   match "/500", :to => "errors#internal_server_error", :via => :all
+  
+  # Routing for static pages in /views/pages/*
+  PagesController.action_methods.each do |action|
+    get "/#{action}", to: "pages##{action}", as: "#{action}_page"
+  end
 end

@@ -8,7 +8,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render "layouts/navbar"
-    %p.notice= notice
-    %p.alert= alert
+    %p.notice.alert
+      = notice
+      = alert
     .container
       = yield
+    = render "layouts/footer"

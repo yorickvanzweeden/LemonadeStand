@@ -28,3 +28,18 @@
 ul.dropdown-content {
   margin-top: 64px;
 }
+
+
+/* FOOTER */
+
+// Enables sticky footer
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+// Enables sticky footer
+body > div.container {
+  flex: 1 0 auto;
+}
