@@ -2,11 +2,7 @@ class OrderItemsController < ApplicationController
 
   def create
     @order = current_order
-    @item = @order.order_items.new(item_params)
-    puts "-------------------"
-    puts @item.inspect
-    puts item_params.inspect
-    puts "-------------------"
+    @item = @order.add_product(item_params)
     @order.save
     session[:order_id] = @order.id
     redirect_to products_path
