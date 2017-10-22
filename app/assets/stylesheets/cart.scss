@@ -1,0 +1,22 @@
+.cart_product_image {
+  height: 100px;
+}
+
+table#cart_products {
+
+}
+
+table#cart_total {
+  margin-top: 20px;
+  background: #ffe0e0;
+  width: 200px;
+  float:right;
+
+  tr {
+    line-height: 10px;
+  }
+
+  tbody > tr#total {
+    border-top: 1px solid black;
+  }
+}
