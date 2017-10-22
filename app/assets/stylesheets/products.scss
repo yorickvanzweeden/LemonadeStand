@@ -12,3 +12,39 @@ form#new_order_item {
 .card .price {
   float: right;
 }
+
+// Enable flex display of products
+.flex-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card.flex-product {
+  // Display at max 3 products
+  min-width: 160px;
+  flex: 1 1 calc(33.333% - 20px);
+  margin: 10px 10px;
+
+  // Enable growth in height of link element (a)
+  display: flex;
+  flex-direction: column;
+
+  > a {
+    // Fill up entire card
+    flex-grow: 1;
+
+    // Fill up card with card-content
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-content {
+    // Prevent text overflow in the short descriptions
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    // Fill up card with content
+    flex-grow: 1;
+  }
+}
