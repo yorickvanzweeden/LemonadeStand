@@ -5,10 +5,8 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if session[:order_id]
-      puts "Found it"
       return Order.find(session[:order_id])
     else
-      puts "New order created"
       return Order.new
     end
   end

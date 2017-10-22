@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :products
   resources :order_items
-  resource :cart, only: [:show]
+  resource :cart, only: [:show] do
+    collection do 
+      get 'checkout'
+    end
+  end 
   root to: 'home#index'
 
   # Error pages
