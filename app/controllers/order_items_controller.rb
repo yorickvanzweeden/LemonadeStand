@@ -3,9 +3,13 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @item = @order.add_product(item_params)
-    @order.save
-    session[:order_id] = @order.id
-    redirect_to products_path
+    if @order.save
+      session[:order_id] = @order.id
+      redirect_to products_path
+    else
+      flash.now[:error] = "Something is wrong"
+      redirect_to products_path
+    end
   end
 
   def destroy

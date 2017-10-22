@@ -2,10 +2,18 @@
 form#new_order_item {
   display: inline;
 
+  .select-wrapper {
+    width: 100px;
+    margin-right: 10px;
+    float:right;
+    top: -12px;
+  }
+
   i {
     float: right;
     top: -8px;
   }
+
 }
 
 //Move price to the right
