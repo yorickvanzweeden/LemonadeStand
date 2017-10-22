@@ -1,16 +1,9 @@
 class PagesController < ApplicationController
-  def aboutus
-  end
-
-  def contact
-  end
-
-  def support
-  end
-
-  def buyerfaq
-  end
-
-  def makerfaq
+  def show
+    begin
+      render template: "pages/#{params[:page]}"
+    rescue ActionView::MissingTemplate => error
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 end

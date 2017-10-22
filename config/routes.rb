@@ -10,7 +10,5 @@ Rails.application.routes.draw do
   match "/500", :to => "errors#internal_server_error", :via => :all
   
   # Routing for static pages in /views/pages/*
-  PagesController.action_methods.each do |action|
-    get "/#{action}", to: "pages##{action}", as: "#{action}_page"
-  end
+  get "/:page" => "pages#show"
 end
