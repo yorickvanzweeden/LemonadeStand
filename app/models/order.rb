@@ -1,4 +1,12 @@
 class Order < ApplicationRecord
+  enum status: {
+    awaiting_payment: 0,
+    open: 1,
+    completed: 2,
+    cancelled: 3,
+    rejected: 4,
+    refunded: 5
+  }
   has_many :order_items
   before_save :update_total
   before_create :update_status
@@ -23,8 +31,8 @@ class Order < ApplicationRecord
   private
 
   def update_status
-    if self.status == nil?
-      self.status = "In progress"
+    if self.status.nil?
+      self.status.open!
     end
   end
 
