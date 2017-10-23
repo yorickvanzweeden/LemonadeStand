@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   has_many :products, foreign_key: :cook_id, dependent: :destroy
+  has_many :orders
   has_one :user
 
   enum role: [:user, :cook, :admin]

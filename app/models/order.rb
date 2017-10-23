@@ -8,8 +8,8 @@ class Order < ApplicationRecord
     refunded: 5
   }
   has_many :order_items
+  belongs_to :profile, required: false
   before_save :update_total
-  before_create :update_status
 
   def add_product(item_params)
     item = self.order_items.find_by(product_id: item_params[:product_id])
@@ -29,12 +29,6 @@ class Order < ApplicationRecord
   end
 
   private
-
-  def update_status
-    if self.status.nil?
-      self.status.open!
-    end
-  end
 
   def update_total
     self.total_price = calculate_total

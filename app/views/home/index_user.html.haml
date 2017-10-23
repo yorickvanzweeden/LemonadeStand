@@ -1,3 +1,16 @@
 %h1 Dashboard User
 %p
 %br/
+
+.row
+  - @orders.each do |order|
+    .col.s12.m6
+      .card.blue-grey.darken-1
+        .card-content.white-text
+          %span.card-title
+            Status: #{order.status}
+            %br
+            Total price: #{order.total_price}
+          %span.card-content
+            - order.order_items.each do |order_item|
+              #{order_item.product.name} (#{order_item.quantity}x)

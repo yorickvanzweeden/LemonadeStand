@@ -6,7 +6,7 @@ class CartsController < ApplicationController
   end
 
   def checkout
-    current_order.open!
+    current_order.update_attributes( status: "open", profile: current_user.profile)
     session[:order_id] = nil
     redirect_to cart_path
   end
