@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :products
   resources :order_items
   resource :cart, only: [:show] do

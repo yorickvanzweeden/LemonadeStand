@@ -1,19 +1,26 @@
 # Creating users
-admin = User.create( email: "admin@admin.nl", role: "admin", password: 'admin@admin.nl', password_confirmation: 'admin@admin.nl')
+admin = User.create( email: "admin@admin.nl", password: 'admin@admin.nl', password_confirmation: 'admin@admin.nl')
 admin.skip_confirmation!
 admin.save!
 
-user = User.create( email: "user@user.nl", role: "user", password: 'user@user.nl', password_confirmation: 'user@user.nl')
+user = User.create( email: "user@user.nl", password: 'user@user.nl', password_confirmation: 'user@user.nl')
 user.skip_confirmation!
 user.save!
 
-cook = User.create( email: "cook@cook.nl", role: "cook", password: 'cook@cook.nl', password_confirmation: 'cook@cook.nl')
+cook = User.create( email: "cook@cook.nl", password: 'cook@cook.nl', password_confirmation: 'cook@cook.nl')
 cook.skip_confirmation!
 cook.save!
 
-cook2 = User.create( email: "cook2@cook.nl", role: "cook", password: 'cook2@cook.nl', password_confirmation: 'cook2@cook.nl')
+cook2 = User.create( email: "cook2@cook.nl", password: 'cook2@cook.nl', password_confirmation: 'cook2@cook.nl')
 cook2.skip_confirmation!
 cook2.save!
+
+# Changing profiles
+admin.profile.update_attributes(role: "admin", first_name: "Bliepadmin", infix: "van", last_name: "Blapadmin")
+user.profile.update_attributes(first_name: "Bliepuser", infix: "van", last_name: "Blapuser")
+cook.profile.update_attributes(role: "cook", first_name: "Bliepcook", infix: "van", last_name: "Blapcook")
+cook2.profile.update_attributes(role: "cook", first_name: "Bliepcook2", infix: "der", last_name: "Blapcook2")
+
 
 # Creating categories
 Category.create(name: "Category1", description: "Description1")
