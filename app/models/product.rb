@@ -6,4 +6,8 @@ class Product < ApplicationRecord
   def owner_of? (profile)
     cook_id == profile.id
   end
+
+  def self.owner_products (profile)
+    return Product.where(cook_id: profile.id).ids
+  end
 end

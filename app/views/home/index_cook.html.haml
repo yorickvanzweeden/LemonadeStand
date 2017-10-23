@@ -16,4 +16,20 @@
           = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 
+.row
+  - @cook_orders.each do |order|
+    .col.s12.m6
+      .card.blue-grey.darken-1
+        .card-content.white-text
+          .card-title
+            Status: #{order.status}
+            %br
+            Total price: #{order.total_price}
+          .card-content
+            - order.order_items.each do |order_item|
+              #{order_item.product.name} (#{order_item.quantity}x)
+        .card-action
+          = link_to 'Accept', order_path(order, order: { status: 'accepted'}), method: :put
+          = link_to 'Reject', order_path(order, order: { status: 'rejected'}), method: :put
+
 = link_to 'New product', new_product_path, class: "waves-effect waves-light btn"

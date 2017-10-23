@@ -7,10 +7,12 @@
     .col.s12.m6
       .card.blue-grey.darken-1
         .card-content.white-text
-          %span.card-title
+          .card-title
             Status: #{order.status}
             %br
             Total price: #{order.total_price}
-          %span.card-content
+          .card-content
             - order.order_items.each do |order_item|
               #{order_item.product.name} (#{order_item.quantity}x)
+        .card-action
+          = link_to 'Cancel', order_path(order, order: { status: 'cancelled'}), method: :put

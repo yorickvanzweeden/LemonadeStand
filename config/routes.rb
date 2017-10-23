@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :products
   resources :order_items
+  resources :orders, only: [:update]
+
   resource :cart, only: [:show] do
     collection do 
       get 'checkout'

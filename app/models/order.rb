@@ -2,10 +2,11 @@ class Order < ApplicationRecord
   enum status: {
     awaiting_payment: 0,
     open: 1,
-    completed: 2,
-    cancelled: 3,
-    rejected: 4,
-    refunded: 5
+    accepted: 2,
+    rejected: 3,
+    completed: 4,
+    cancelled: 5,
+    refunded: 6
   }
   has_many :order_items
   belongs_to :profile, required: false
@@ -21,6 +22,11 @@ class Order < ApplicationRecord
       new_item = self.order_items.new(item_params)
     end
   end
+
+  def cancel
+    self.order.update_attribute(status:"cancelled")
+  end
+
 
 
   def calculate_total
