@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :products
   resources :order_items
-  resource :cart, only: [:show]
+  resources :orders, only: [:update]
+
+  resource :cart, only: [:show] do
+    collection do 
+      get 'checkout'
+    end
+  end 
   root to: 'home#index'
 
   # Error pages

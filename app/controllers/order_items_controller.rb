@@ -2,14 +2,14 @@ class OrderItemsController < ApplicationController
 
   def create
     @order = current_order
-    @item = @order.order_items.new(item_params)
-    puts "-------------------"
-    puts @item.inspect
-    puts item_params.inspect
-    puts "-------------------"
-    @order.save
-    session[:order_id] = @order.id
-    redirect_to products_path
+    @item = @order.add_product(item_params)
+    if @order.save
+      session[:order_id] = @order.id
+      redirect_to products_path
+    else
+      flash.now[:error] = "Something is wrong"
+      redirect_to products_path
+    end
   end
 
   def destroy

@@ -20,3 +20,4 @@
             = f.hidden_field :product_id, value: @product.id
             = f.hidden_field :quantity, value: 1
             = f.submit 'Add to cart', class: 'btn waves-effect'
+            = f.select :quantity, ((1..4).map {|i| [i,i] })

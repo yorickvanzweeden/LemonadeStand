@@ -1,7 +1,18 @@
 %h1 Dashboard User
 %p
-  - if current_user.present?
-    = current_user.admin?
-    = current_user.user?
-    = current_user.role
 %br/
+
+.row
+  - @orders.each do |order|
+    .col.s12.m6
+      .card.blue-grey.darken-1
+        .card-content.white-text
+          .card-title
+            Status: #{order.status}
+            %br
+            Total price: #{order.total_price}
+          .card-content
+            - order.order_items.each do |order_item|
+              #{order_item.product.name} (#{order_item.quantity}x)
+        .card-action
+          = link_to 'Cancel', order_path(order, order: { status: 'cancelled'}), method: :put

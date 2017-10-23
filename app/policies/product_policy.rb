@@ -4,10 +4,14 @@ class ProductPolicy
   def initialize(user, product)
     @user = user
     @product = product
+
+    if user
+      @profile = user.profile
+    end  
   end
 
   def new?
-    user and (user.cook? or user.admin?)
+    user and (@profile.cook? or @profile.admin?)
   end
 
   def edit?
@@ -27,6 +31,6 @@ class ProductPolicy
   end
 
   def admin_or_cook_owner?
-    user and ((user.cook? and product.owner_of?(user)) or user.admin?)
+    user and ((@profile.cook? and product.owner_of?(@profile)) or @profile.admin?)
   end
 end

@@ -5,6 +5,21 @@
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true
+
+  = f.fields_for :profile do |pf|
+    .field
+      = pf.label :first_name
+      %br/
+      = pf.text_field :first_name
+    .field
+      = pf.label :infix
+      %br/
+      = pf.text_field :infix
+    .field
+      = pf.label :last_name
+      %br/
+      = pf.text_field :last_name
+
   .field
     = f.label :password
     - if @minimum_password_length

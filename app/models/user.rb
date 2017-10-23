@@ -5,12 +5,14 @@ class User < ApplicationRecord
          :registerable, :recoverable, :rememberable,
          :timeoutable, :trackable, :validatable
 
-  has_many :products, foreign_key: :cook_id
+  has_one :profile, dependent: :destroy
+  accepts_nested_attributes_for :profile
 
-  enum role: [:user, :cook, :admin]
-  after_initialize :set_default_role, :if => :new_record?
+  after_initialize :init_profile
 
-  def set_default_role
-    self.role ||= :user
+  def init_profile
+    if new_record?
+      build_profile
+    end
   end
 end
