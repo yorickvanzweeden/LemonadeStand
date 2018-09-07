@@ -1,5 +1,9 @@
 # LemonadeStand
-No pain, no gain
+This project is a Ruby-on-Rails project. It contains a webstore with Devise user authentication and PostgreSQL database. The original idea was to create service like [TakeAway](takeaway.com), but with hobby chefs instead of restaurants. Market analysis showed that delivery was unfeasible and thus the project was discontinued.
+
+No longer maintained since 2017, Okt 23
+
+
 
 MVP Requirements:
 - rbenv (to install Ruby and manage Ruby versions)
